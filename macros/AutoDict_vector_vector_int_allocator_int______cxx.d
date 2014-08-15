@@ -1,0 +1,52 @@
+
+# DO NOT DELETE
+
+AutoDict_vector_vector_int_allocator_int______cxx.so: EventTree.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TROOT.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TDirectory.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TNamed.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TObject.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/Rtypes.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/RConfig.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/RVersion.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/DllImport.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/Rtypeinfo.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/snprintf.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/strlcpy.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TGenericClassInfo.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TSchemaHelper.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TStorage.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TVersionCheck.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/Riosfwd.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TBuffer.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TString.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TMathBase.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TList.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TSeqCollection.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TCollection.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TIterator.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TDatime.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TUUID.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TChain.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TTree.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TBranch.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TObjArray.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TAttFill.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TDataType.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TDictionary.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/Property.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TAttLine.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TAttMarker.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TArrayD.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TArray.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TArrayI.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TClass.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TObjString.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TVirtualTreePlayer.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TFile.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TDirectoryFile.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TUrl.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/TMap.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/THashTable.h
+AutoDict_vector_vector_int_allocator_int______cxx.so: /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/cintdictversion.h /uscmst1/prod/sw/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms21/include/RVersion.h
+AutoDict_vector_vector_int_allocator_int______cxx__ROOTBUILDVERSION= 5.32/00
