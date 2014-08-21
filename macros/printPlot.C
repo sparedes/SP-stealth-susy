@@ -231,29 +231,6 @@
  
  TCanvas *canvas1 = new TCanvas("canvas1","canvas1",100,100,700,500);
 
- jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
- jetEtvsPrunMass->GetYaxis()->SetTitle("Et (GeV)"); 
- jetEtvsPrunMass->SetTitle("Jet PrunMass vs Et");
- jetEtvsPrunMass->SetStats(kFALSE); 
- jetEtvsPrunMass->Draw("colz");
- canvas1->SetLogz(kTRUE); 
- canvas1->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsPrunMass.png"); 
- 
- 
-  TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
-
- jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
- jetEtvsPrunMass->GetYaxis()->SetTitle("Energy (GeV)"); 
- jetEtvsPrunMass->SetTitle("Jet PrunMass vs Energy");
- jetEtvsPrunMass->SetStats(kFALSE); 
- jetEtvsPrunMass->Draw("colz");
- canvas2->SetLogz(kTRUE); 
- canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsPrunMass.png"); 
-
- 
- 
- TCanvas *canvas1 = new TCanvas("canvas1","canvas1",100,100,700,500);
-
  jetEtvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
  jetEtvsMass->GetYaxis()->SetTitle("Et (GeV)"); 
  jetEtvsMass->SetTitle("Jet Mass vs Et");
@@ -265,13 +242,36 @@
  
   TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
 
- jetEtvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
- jetEtvsMass->GetYaxis()->SetTitle("Energy (GeV)"); 
- jetEtvsMass->SetTitle("Jet Mass vs Energy");
- jetEtvsMass->SetStats(kFALSE); 
- jetEtvsMass->Draw("colz");
+ jetEnergyvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
+ jetEnergyvsPrunMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+ jetEnergyvsPrunMass->SetTitle("Jet PrunMass vs Energy");
+ jetEnergyvsPrunMass->SetStats(kFALSE); 
+ jetEnergyvsPrunMass->Draw("colz");
  canvas2->SetLogz(kTRUE); 
- canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsMass.png"); 
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsPrunMass.png"); 
+
+ TCanvas *canvas3 = new TCanvas("canvas3","canvas3",100,100,700,500);
+
+ jetEnergyvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
+ jetEnergyvsMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+ jetEnergyvsMass->SetTitle("Jet Mass vs Energy");
+ jetEnergyvsMass->SetStats(kFALSE); 
+ jetEnergyvsMass->Draw("colz");
+ canvas3->SetLogz(kTRUE); 
+ canvas3->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsMass.png"); 
+ 
+ 
+ 
+ TCanvas *canvas4 = new TCanvas("canvas4","canvas4",100,100,700,500);
+
+ jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
+ jetEtvsPrunMass->GetYaxis()->SetTitle("Et (GeV)"); 
+ jetEtvsPrunMass->SetTitle("Jet PrunMass vs Et");
+ jetEtvsPrunMass->SetStats(kFALSE); 
+ jetEtvsPrunMass->Draw("colz");
+ canvas4->SetLogz(kTRUE); 
+ canvas4->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsPrunMass.png"); 
+ 
  
  
  
