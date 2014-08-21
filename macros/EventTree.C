@@ -75,18 +75,20 @@ void EventTree::Loop()
    TH1F *nJetEtCut = new TH1F("nJetEtCut","nJetEtCut",10,0.,10.);
    TH1F *nJetEtPmassCut = new TH1F("nJetEtPmassCut","nJetEtPmassCut",10,0.,10.);
    TH1F *JetPmass = new TH1F("JetPmass","JetPmass",200,0.,400.);
+   TH1F *JetEt = new TH1F("JetEt","JetEt",300,0.,2000.);
+   TH1F *JetMass = new TH1F("JetMass","JetMass",300,0.,1000.);
    TH1F *JetPmassACut = new TH1F("JetPmassACut","JetPmassACut",200,0.,400.);
 
       //sorting according to number of iso. photons
     
    TH1F *histoGenPtPhoton_NMid0 = new TH1F("histoGenPtPhoton_NMid0","histoGenPtPhoton_NMid0",150,0.,500.);
    TH1F *histoGenPtPhoton_NMid1 = new TH1F("histoGenPtPhoton_NMid1","histoGenPtPhoton_NMid1",150,0.,500.);
-   TH1F *histoGenPtPhoton_NMi1o0 = new TH1F("histoGenPtPhoton_NMi1o0","histoGenPtPhoton_NMi1o0",150,0.,500.);
+   TH1F *histoGenPtPhoton_NMid1o0 = new TH1F("histoGenPtPhoton_NMid1o0","histoGenPtPhoton_NMid1o0",150,0.,500.);
     
    
    TH1F *histoGenPtPhotonfromX_NMid0 = new TH1F("histoGenPtPhotonfromX_NMid0","histoGenPtPhotonfromX_NMid0",150,0.,500.);
    TH1F *histoGenPtPhotonfromX_NMid1 = new TH1F("histoGenPtPhotonfromX_NMid1","histoGenPtPhotonfromX_NMid1",150,0.,500.);
-   TH1F *histoGenPtPhotonfromX_NMi1o0 = new TH1F("histoGenPtPhotonfromX_NMi1o0","histoGenPtPhotonfromX_NMi1o0",150,0.,500.);
+   TH1F *histoGenPtPhotonfromX_NMid1o0 = new TH1F("histoGenPtPhotonfromX_NMid1o0","histoGenPtPhotonfromX_NMid1o0",150,0.,500.);
       
    TH1F *nJet_NMid1  = new TH1F("nJet_NMid1","nJet_NMid1",12,0.,12.);				  
    TH1F *nJetEtCut_NMid1   = new TH1F("nJetEtCut_NMid1","nJetEtCut_NMid1  ",10,0.,10.);
@@ -106,6 +108,14 @@ void EventTree::Loop()
    TH1F *JetPmass_NMid1o0   = new TH1F("JetPmass_NMid1o0  ","JetPmass_NMid1o0",200,0.,400.);
    TH1F *JetPmassACut_NMid1o0   = new TH1F("JetPmassACut_NMid1o0","JetPmassACut_NMid1o0",200,0.,400.);
  
+
+
+
+   TH2F *jetEtvsPrunMass = new TH2F("jetEtvsPrunMass","jetEtvsPrunMass",200,0.,500.,200,0.,1000.);
+   TH2F *jetEnergyvsPrunMass = new TH2F("jetEnergyvsPrunMass","jetEnergyvsPrunMass",200,0.,500.,200,0.,1000.);
+   
+   TH2F *jetEtvsMass = new TH2F("jetEtvsMass","jetEtvsMass",200,0.,500.,200,0.,1000.);
+   TH2F *jetEnergyvsMass = new TH2F("jetEnergyvsMass","jetEnergyvsMass",200,0.,500.,200,0.,1000.);
    
 //loop over all the events
    
@@ -191,9 +201,9 @@ void EventTree::Loop()
       Int_t LooseIsoCount = 0;
       for (Int_t i = 0;i < nPho; i++){
       	phoCount++;
-      	if (phoPFChIso->at(i)<0.7 && phoPFNeuIso->at(i)<(0.4+(0.4*phoEt->at(i))) && phoPFPhoIso->at(i)<(0.5+(0.005*phoEt->at(i)))) TightIsoCount++;
-       	if (phoPFChIso->at(i)<1.5 && phoPFNeuIso->at(i)<(1.0+(0.4*phoEt->at(i))) && phoPFPhoIso->at(i)<(0.7+(0.005*phoEt->at(i)))) MidIsoCount++;
-     	if (phoPFChIso->at(i)<2.6 && phoPFNeuIso->at(i)<(3.5+(4*phoEt->at(i))) && phoPFPhoIso->at(i)<(1.3+(0.005*phoEt->at(i)))) LooseIsoCount++;
+      	if (phoPFChIso->at(i) < 0.7 && phoPFNeuIso->at(i) < (0.4+(0.4*phoEt->at(i))) && phoPFPhoIso->at(i) < (0.5+(0.005*phoEt->at(i)))) TightIsoCount++;
+       	if (phoPFChIso->at(i) < 1.5 && phoPFNeuIso->at(i) <( 1.0+(0.4*phoEt->at(i))) && phoPFPhoIso->at(i) < (0.7+(0.005*phoEt->at(i)))) MidIsoCount++;
+     	if (phoPFChIso->at(i) < 2.6 && phoPFNeuIso->at(i) < (3.5+(0.4*phoEt->at(i))) && phoPFPhoIso->at(i) < (1.3+(0.005*phoEt->at(i)))) LooseIsoCount++;
 	}
       histoNPho->Fill(phoCount); 
       histoMedIso->Fill(MidIsoCount);
@@ -214,57 +224,62 @@ void EventTree::Loop()
       Int_t countEtCut_NMid1o0 = 0;
       Int_t countEtPmassCut_NMid1o0 = 0;
       Int_t countJet_NMid1o0 = 0;
-      
-     if(MidIsoCount == 0){
-      	
-      	};
-      if(MidIsoCount == 1){
-      	
-	};
-      if(MidIsoCount <= 1){
-      	
-	};
-      
+            
       //JETS
 
 
       Int_t countEtCut = 0;
       Int_t countEtPmassCut = 0;
       Int_t countJet = 0;
+      
+      
+      
       for (Int_t k = 0;k < nCA8Jet; k++){
 
-              TLorentzVector jetVec;
-              jetVec->SetPtEtaPhiM(CA8JetPt->at(k),CA8JetEta->at(k),CA8JetPhi->at(k),CA8JetMass->at(k));
-              if(jetVec->Energy() > 250){
-	      	countEtCut++;
-		if (MidIsoCount == 0) countEtCut_NMid0++;		
-		if (MidIsoCount == 1) countEtCut_NMid1++;		
-		if (MidIsoCount <= 1) countEtCut_NMid1o0++;		
-		}
-              if(jetVec->Energy() > 250 && CA8prunedJetMass->at(k)>50){
-	      	countEtPmassCut++;
-		if (MidIsoCount == 0) countEtPmassCut_NMid0++;  	
-		if (MidIsoCount == 1) countEtPmassCut_NMid1++;  	
-		if (MidIsoCount <= 1) countEtPmassCut_NMid1o0++;		
-		}
-              JetPmass->Fill(CA8prunedJetMass->at(k));
-              if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut->Fill(CA8prunedJetMass->at(k));
-              countJet++;
-	      if (MidIsoCount == 0) {
-	      	countJet_NMid0++;
-	      	JetPmass_NMid0->Fill(CA8prunedJetMass->at(k));
-		if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid0->Fill(CA8prunedJetMass->at(k));
-		}
-	      if (MidIsoCount == 1) {
-	      	countJet_NMid1++;
-	      	JetPmass_NMid1->Fill(CA8prunedJetMass->at(k));
-		if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid1->Fill(CA8prunedJetMass->at(k));
-		}
-	      if (MidIsoCount <= 1) {
-	      	countJet_NMid1o0++;
-	      	JetPmass_NMid1o0->Fill(CA8prunedJetMass->at(k));
-		if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid1o0->Fill(CA8prunedJetMass->at(k));
-		}
+	      
+	    TLorentzVector jetVec;
+	    jetVec->SetPtEtaPhiM(CA8JetPt->at(k),CA8JetEta->at(k),CA8JetPhi->at(k),CA8JetMass->at(k));
+	    
+	    Float_t jetEt = jetVec->Et();
+	    Float_t jetEnergy = jetVec->Energy();
+	    
+	    JetEt->Fill(jetEt);
+	    JetMass->Fill(CA8JetMass->at(k));
+	    jetEtvsMass->Fill(CA8JetMass->at(k),jetEt);
+	    jetEnergyvsMass->Fill(CA8JetMass->at(k),jetEnergy);
+	    jetEtvsPrunMass->Fill(CA8prunedJetMass->at(k),jetEt);
+	    jetEnergyvsPrunMass->Fill(CA8prunedJetMass->at(k),jetEnergy);
+	    
+            if(jetEt > 250){
+	      countEtCut++;
+	      if (MidIsoCount == 0) countEtCut_NMid0++; 	      
+	      if (MidIsoCount == 1) countEtCut_NMid1++; 	      
+	      if (MidIsoCount <= 1) countEtCut_NMid1o0++;	      
+	      }
+            if(jetEt > 250 && CA8prunedJetMass->at(k)>50){
+	      countEtPmassCut++;
+	      if (MidIsoCount == 0) countEtPmassCut_NMid0++;	      
+	      if (MidIsoCount == 1) countEtPmassCut_NMid1++;	      
+	      if (MidIsoCount <= 1) countEtPmassCut_NMid1o0++;  	      
+	      }
+            JetPmass->Fill(CA8prunedJetMass->at(k));
+            if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut->Fill(CA8prunedJetMass->at(k));
+            countJet++;
+	    if (MidIsoCount == 0) {
+	      countJet_NMid0++;
+	      JetPmass_NMid0->Fill(CA8prunedJetMass->at(k));
+	      if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid0->Fill(CA8prunedJetMass->at(k));
+	      }
+	    if (MidIsoCount == 1) {
+	      countJet_NMid1++;
+	      JetPmass_NMid1->Fill(CA8prunedJetMass->at(k));
+	      if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid1->Fill(CA8prunedJetMass->at(k));
+	      }
+	    if (MidIsoCount <= 1) {
+	      countJet_NMid1o0++;
+	      JetPmass_NMid1o0->Fill(CA8prunedJetMass->at(k));
+	      if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut_NMid1o0->Fill(CA8prunedJetMass->at(k));
+	      }
            }
       nJetEtCut->Fill(countEtCut);
       nJetEtPmassCut->Fill(countEtPmassCut);
@@ -296,8 +311,8 @@ void EventTree::Loop()
 		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid1->Fill(mcPt->at(i));
 		      }
 		    if (MidIsoCount <= 1) {
-		      histoGenPtPhoton_NMid1->Fill(mcPt->at(i));
-		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid1->Fill(mcPt->at(i));
+		      histoGenPtPhoton_NMid1o0->Fill(mcPt->at(i));
+		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid1o0->Fill(mcPt->at(i));
 		      }
         	} 
         }      
@@ -306,7 +321,10 @@ void EventTree::Loop()
       //if (ientry > 100) break;
       
             // if (Cut(ientry) < 0) continue;
-   }
+	   
+   }  
+   
+   
  TFile* fOut = new TFile("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/ggNtupleTest.root","RECREATE");
  
 //  histoGenPtQuark->Write();			
@@ -357,14 +375,88 @@ void EventTree::Loop()
  
  histoGenPtPhoton_NMid0->Write(); 
  histoGenPtPhoton_NMid1->Write();
- histoGenPtPhoton_NMi1o0->Write();
+ histoGenPtPhoton_NMid1o0->Write();
 
 
  histoGenPtPhotonfromX_NMid0->Write(); 
  histoGenPtPhotonfromX_NMid1->Write(); 
- histoGenPtPhotonfromX_NMi1o0->Write();
-  
+ histoGenPtPhotonfromX_NMid1o0->Write();
+ 
+ 
+ JetEt->Write();
+ JetMass->Write();
+ 
+ jetEtvsMass->Write();
+ jetEtvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
+ jetEtvsMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+ jetEtvsMass->SetTitle("Jet Mass vs Energy");
+ jetEtvsMass->SetStats(kFALSE); 
+ 
+ 
+ jetEnergyvsMass->Write();
+ 
+ jetEtvsPrunMass->Write();
+ jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
+ jetEtvsPrunMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+ jetEtvsPrunMass->SetTitle("Jet PrunMass vs Energy");
+ jetEtvsPrunMass->SetStats(kFALSE); 
+ 
+ 
+ jetEnergyvsPrunMass->Write();
+
+ fOut->Close();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
