@@ -109,6 +109,7 @@ void EventTree::Loop()
    TH1F *JetPmassACut_NMid1o0   = new TH1F("JetPmassACut_NMid1o0","JetPmassACut_NMid1o0",200,0.,400.);
  
 
+   TH1F *nJetEtTauRatioCut   = new TH1F("nJetEtTauRatioCut","nJetEtTauRatioCut  ",10,0.,10.);
 
 
    TH2F *jetEtvsPrunMass = new TH2F("jetEtvsPrunMass","jetEtvsPrunMass",200,0.,500.,200,0.,1000.);
@@ -116,6 +117,42 @@ void EventTree::Loop()
    
    TH2F *jetEtvsMass = new TH2F("jetEtvsMass","jetEtvsMass",200,0.,500.,200,0.,1000.);
    TH2F *jetEnergyvsMass = new TH2F("jetEnergyvsMass","jetEnergyvsMass",200,0.,500.,200,0.,1000.);
+   
+   TH2F *jetEnergyvsTau3 = new TH2F("jetEnergyvsTau3","jetEnergyvsTau3",200,0.,1.,200,0.,1000.);
+   TH2F *jetEnergyvsTauRatio = new TH2F("jetEnergyvsTauRatio","jetEnergyvsTauRatio",200,0.,1.,200,0.,1000.);
+   TH2F *jetMassvsTau3 = new TH2F("jetMassvsTau3","jetMassvsTau3",200,0.,1.,200,0.,1000.);
+   TH2F *jetMassvsTauRatio = new TH2F("jetMassvsTauRatio","jetMassvsTauRatio",200,0.,1.,200,0.,1000.);
+   
+   //Aug 26
+   
+   TH1F *quarkFromSquarkJetPt   = new TH1F("quarkFromSquarkJetPt","quarkFromSquarkJetPt",200,0.,400.);
+   TH1F *quarkFromSquarkJetEt   = new TH1F("quarkFromSquarkJetEt","quarkFromSquarkJetEt",200,0.,400.);
+   TH1F *quarkFromSquarkJetEta   = new TH1F("quarkFromSquarkJetEta","quarkFromSquarkJetEta",100,-4.,4.);
+   TH1F *quarkFromSquarkJetTauRatio   = new TH1F("quarkFromSquarkJetTauRatio","quarkFromSquarkJetTauRatio",100,0.,1.);
+   TH1F *quarkFromSquarkJetMass   = new TH1F("quarkFromSquarkJetMass","quarkFromSquarkJetMass",200,0.,400.);
+   
+   TH1F *singlinoFromNtrlioJetPt   = new TH1F("singlinoFromNtrlioJetPt","singlinoFromNtrlioJetPt",200,0.,400.);
+   TH1F *singlinoFromNtrlioJetEt   = new TH1F("singlinoFromNtrlioJetEt","singlinoFromNtrlioJetEt",200,0.,400.);
+   TH1F *singlinoFromNtrlioJetEta   = new TH1F("singlinoFromNtrlioJetEta","singlinoFromNtrlioJetEta",100,-4.,4.);
+   TH1F *singlinoFromNtrlioJetTauRatio   = new TH1F("singlinoFromNtrlioJetTauRatio","singlinoFromNtrlioJetTauRatio",100,0.,1.);
+   TH1F *singlinoFromNtrlioJetMass   = new TH1F("singlinoFromNtrlioJetMass","singlinoFromNtrlioJetMass",200,0.,400.);
+   
+   TH2F *quarkFromSquarkJetMassvsTauRatio = new TH2F("quarkFromSquarkJetMassvsTauRatio","quarkFromSquarkJetMassvsTauRatio",200,0.,1.,200,0.,400.);
+   TH2F *singlinoFromNtrlioJetMassvsTauRatio = new TH2F("singlinoFromNtrlioJetMassvsTauRatio","singlinoFromNtrlioJetMassvsTauRatio",100,0.,1.,100,0.,300.);
+   
+   TH2F *quarkFromSquarkJetMassvsTauRatioEtCut = new TH2F("quarkFromSquarkJetMassvsTauRatioEtCut","quarkFromSquarkJetMassvsTauRatioEtCut",200,0.,1.,200,0.,400.);
+   TH2F *singlinoFromNtrlioJetMassvsTauRatioEtCut = new TH2F("singlinoFromNtrlioJetMassvsTauRatioEtCut","singlinoFromNtrlioJetMassvsTauRatioEtCut",100,0.,1.,100,0.,300.);
+   TH2F *quarkFromSquarkJetMassvsEtTauRatioCut = new TH2F("quarkFromSquarkJetMassvsEtTauRatioCut","quarkFromSquarkJetMassvsEtTauRatioCut",200,0.,1200.,200,0.,400.);
+   TH2F *singlinoFromNtrlioJetMassvsEtTauRatioCut = new TH2F("singlinoFromNtrlioJetMassvsEtTauRatioCut","singlinoFromNtrlioJetMassvsEtTauRatioCut",200,0.,800.,200,0.,400.);
+   
+   TH1F *quarkJetPt   = new TH1F("quarkJetPt","quarkJetPt",200,0.,800.);
+   TH1F *quarkJetMass   = new TH1F("quarkJetMass","quarkJetMass",200,0.,800.);
+   
+   TH1F *neutralinoJetPt   = new TH1F("neutralinoJetPt","neutralinoJetPt",200,0.,800.);
+   TH1F *neutralinoJetMass   = new TH1F("neutralinoJetMass","neutralinoJetMass",200,0.,800.);
+   
+   TH2F *quarkJetMassvsTauRatio = new TH2F("quarkJetMassvsTauRatio","quarkJetMassvsTauRatio",200,0.,1.,200,0.,400.);
+   TH2F *neutralinoJetMassvsTauRatio = new TH2F("neutralinoJetMassvsTauRatio","neutralinoJetMassvsTauRatio",200,0.,1.,200,0.,400.);
    
 //loop over all the events
    
@@ -145,7 +182,7 @@ void EventTree::Loop()
         	    histoGenEtaPhoton->Fill(mcEta->at(i));		    
         	    histoGenPhiPhoton->Fill(mcPhi->at(i));		    
         	    histoGenPtPhoton->Fill(mcPt->at(i));
-        	    if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX->Fill(mcPt->at(i));
+        	    if (mcMomPID->at(i)==1000022) histoGenPtPhotonfromX->Fill(mcPt->at(i));
         		} 
         }	       
 
@@ -157,7 +194,7 @@ void EventTree::Loop()
         
         //loop over all the RECO photons in the event
       for (Int_t j = 0;j < nPho; j++){
-
+      
         histoRecoPtPhoton->Fill(phoEt->at(j));	      
         //isolation conditions
         if (phoPFChIso->at(j)<1.5 && phoPFNeuIso->at(j)<(1.0+(0.4*phoEt->at(j))) && phoPFPhoIso->at(j)<(0.7+(0.005*phoEt->at(j))) ) {
@@ -170,7 +207,7 @@ void EventTree::Loop()
         	for (Int_t i = 0;i < nMC; i++){
         	
         		//check  paticle is PHOTON FROM NEUTRALINO
-        		if(mcPID->at(i) == 22 && mcMomPID->at(i) >= 1000022 && mcMomPID->at(i) <= 1000035){				    
+        		if(mcPID->at(i) == 22 && mcMomPID->at(i)==1000022){				    
         		     
         			
         			DEta = mcEta->at(i)-phoEta->at(j); 
@@ -183,7 +220,7 @@ void EventTree::Loop()
         				
         				histoPtMatchIsoPhoton->Fill(mcPt->at(i));
         				nMatch++;
-					if (mcMomPID->at(i) >= 1000022 && mcMomPID->at(i) <= 1000035) nMatchFromX++;					
+					if (mcMomPID->at(i)==1000022) nMatchFromX++;					
         				}
         			
         			}					
@@ -231,6 +268,7 @@ void EventTree::Loop()
       Int_t countEtCut = 0;
       Int_t countEtPmassCut = 0;
       Int_t countJet = 0;
+      Int_t countJetEtTauRatio = 0;
       
       
       
@@ -238,17 +276,24 @@ void EventTree::Loop()
 
 	      
 	    TLorentzVector jetVec;
-	    jetVec->SetPtEtaPhiM(CA8JetPt->at(k),CA8JetEta->at(k),CA8JetPhi->at(k),CA8JetMass->at(k));
+	    jetVec.SetPtEtaPhiM(CA8JetPt->at(k),CA8JetEta->at(k),CA8JetPhi->at(k),CA8JetMass->at(k));
 	    
-	    Float_t jetEt = jetVec->Et();
-	    Float_t jetEnergy = jetVec->Energy();
+	    Float_t jetEt = jetVec.Et();
+	    Float_t jetEnergy = jetVec.Energy();
 	    
 	    JetEt->Fill(jetEt);
 	    JetMass->Fill(CA8JetMass->at(k));
+	    
 	    jetEtvsMass->Fill(CA8JetMass->at(k),jetEt);
 	    jetEnergyvsMass->Fill(CA8JetMass->at(k),jetEnergy);
 	    jetEtvsPrunMass->Fill(CA8prunedJetMass->at(k),jetEt);
 	    jetEnergyvsPrunMass->Fill(CA8prunedJetMass->at(k),jetEnergy);
+	    
+	    jetEnergyvsTau3->Fill(CA8Jet_tau3->at(k),jetEnergy);
+	    jetEnergyvsTauRatio->Fill(((CA8Jet_tau3->at(k))/(CA8Jet_tau1->at(k))),jetEnergy);
+	    
+	    jetMassvsTau3->Fill(CA8Jet_tau3->at(k),CA8prunedJetMass->at(k));
+	    jetMassvsTauRatio->Fill(((CA8Jet_tau3->at(k))/(CA8Jet_tau1->at(k))),CA8prunedJetMass->at(k));
 	    
             if(jetEt > 250){
 	      countEtCut++;
@@ -256,14 +301,17 @@ void EventTree::Loop()
 	      if (MidIsoCount == 1) countEtCut_NMid1++; 	      
 	      if (MidIsoCount <= 1) countEtCut_NMid1o0++;	      
 	      }
-            if(jetEt > 250 && CA8prunedJetMass->at(k)>50){
+            if(jetEt > 250 && CA8prunedJetMass->at(k) > 50){
 	      countEtPmassCut++;
 	      if (MidIsoCount == 0) countEtPmassCut_NMid0++;	      
 	      if (MidIsoCount == 1) countEtPmassCut_NMid1++;	      
 	      if (MidIsoCount <= 1) countEtPmassCut_NMid1o0++;  	      
 	      }
             JetPmass->Fill(CA8prunedJetMass->at(k));
-            if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) JetPmassACut->Fill(CA8prunedJetMass->at(k));
+            if (CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k) < 0.35) {
+	    	if (jetEt > 250.) countJetEtTauRatio++;
+		JetPmassACut->Fill(CA8prunedJetMass->at(k));
+	    	}
             countJet++;
 	    if (MidIsoCount == 0) {
 	      countJet_NMid0++;
@@ -282,6 +330,7 @@ void EventTree::Loop()
 	      }
            }
       nJetEtCut->Fill(countEtCut);
+      nJetEtTauRatioCut->Fill(countJetEtTauRatio);
       nJetEtPmassCut->Fill(countEtPmassCut);
       nJet->Fill(countJet);
       
@@ -298,24 +347,99 @@ void EventTree::Loop()
       nJet_NMid1o0->Fill(countJet_NMid1o0);
       
       for (Int_t i = 0;i < nMC; i++){
+	
       	if (mcPID->at(i) == 22) {
         	    //histoGenEtaPhoton->Fill(mcEta->at(i));		    
         	    //histoGenPhiPhoton->Fill(mcPhi->at(i));
 		    
 		    if (MidIsoCount ==0) {
 		      histoGenPtPhoton_NMid0->Fill(mcPt->at(i));
-		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid0->Fill(mcPt->at(i));
+		      if (mcMomPID->at(i)==1000022) histoGenPtPhotonfromX_NMid0->Fill(mcPt->at(i));
 		      }
 		    if (MidIsoCount == 1) {
 		      histoGenPtPhoton_NMid1->Fill(mcPt->at(i));
-		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid1->Fill(mcPt->at(i));
+		      if (mcMomPID->at(i)==1000022) histoGenPtPhotonfromX_NMid1->Fill(mcPt->at(i));
 		      }
 		    if (MidIsoCount <= 1) {
 		      histoGenPtPhoton_NMid1o0->Fill(mcPt->at(i));
-		      if (mcMomPID->at(i)>=1000022 && mcMomPID->at(i)<=1000035) histoGenPtPhotonfromX_NMid1o0->Fill(mcPt->at(i));
+		      if (mcMomPID->at(i)==1000022) histoGenPtPhotonfromX_NMid1o0->Fill(mcPt->at(i));
 		      }
         	} 
-        }      
+         }
+	
+      //jet matching
+      
+      for (Int_t k = 0;k < nCA8Jet; k++){
+      	
+	Int_t Dr;
+	Int_t matchPID;
+	Int_t matchMomPID;
+	
+	TLorentzVector jetVec1;
+	jetVec1.SetPtEtaPhiM(CA8JetPt->at(k),CA8JetEta->at(k),CA8JetPhi->at(k),CA8JetMass->at(k));
+	
+	Float_t tauRatio = CA8Jet_tau3->at(k)/CA8Jet_tau1->at(k);
+
+      	
+	for (Int_t i = 0;i < nMC; i++){
+	
+		if (i == 0) {
+			Dr = sqrt((mcEta->at(i) - CA8JetEta->at(k))**2+(mcPhi->at(i) - CA8JetPhi->at(k))**2);
+			matchPID = mcPID->at(i);
+			matchMomPID = mcMomPID->at(i);
+			}
+
+		else {
+			Int_t tempDr = sqrt((mcEta->at(i) - CA8JetEta->at(k))**2+(mcPhi->at(i) - CA8JetPhi->at(k))**2);
+			
+			if(tempDr < Dr){
+				Dr = tempDr;
+				matchPID = mcPID->at(i);
+				matchMomPID = mcMomPID->at(i);
+					}
+				}
+			}
+			
+	if(matchPID >= 1 && matchPID <= 6 && matchMomPID >= 1000001 && matchMomPID <= 1000006){
+		quarkFromSquarkJetPt->Fill(CA8JetPt->at(k));   
+		quarkFromSquarkJetEta->Fill(CA8JetEta->at(k));   
+		quarkFromSquarkJetEt->Fill(jetVec1->Et());   
+		quarkFromSquarkJetTauRatio->Fill(tauRatio);   
+		quarkFromSquarkJetMass->Fill(CA8prunedJetMass->at(k)); 
+		if (jetVec1->Et() > 250) quarkFromSquarkJetMassvsTauRatioEtCut->Fill(tauRatio,CA8prunedJetMass->at(k));
+		if (tauRatio < 0.35) quarkFromSquarkJetMassvsEtTauRatioCut->Fill(jetVec1->Et(),CA8prunedJetMass->at(k));
+		
+		quarkFromSquarkJetMassvsTauRatio->Fill(tauRatio,CA8prunedJetMass->at(k));
+		//cout<<"Quark From SquarkFromSquark Jet found on event "<<ientry<<" jet number "<<k<<endl;
+			}
+	if(matchPID >= 1 && matchPID <= 6){
+		quarkJetPt->Fill(CA8JetPt->at(k));   
+		quarkJetMass->Fill(CA8prunedJetMass->at(k)); 
+
+		quarkJetMassvsTauRatio->Fill(tauRatio,CA8prunedJetMass->at(k));
+		//cout<<"Quark Jet found on event "<<ientry<<" jet number "<<k<<endl;
+			}
+	if(matchPID == 21 && matchMomPID == 3000002 ){
+		singlinoFromNtrlioJetPt->Fill(CA8JetPt->at(k));  
+		singlinoFromNtrlioJetEta->Fill(CA8JetEta->at(k));   
+		singlinoFromNtrlioJetEt->Fill(jetVec1->Et());   
+		singlinoFromNtrlioJetTauRatio->Fill(tauRatio);   
+		singlinoFromNtrlioJetMass->Fill(CA8prunedJetMass->at(k));
+		if (jetVec1->Et() > 250) singlinoFromNtrlioJetMassvsTauRatioEtCut->Fill(tauRatio,CA8prunedJetMass->at(k));
+		if (tauRatio < 0.35) singlinoFromNtrlioJetMassvsEtTauRatioCut->Fill(jetVec1->Et(),CA8prunedJetMass->at(k));
+		
+		singlinoFromNtrlioJetMassvsTauRatio->Fill(tauRatio,CA8prunedJetMass->at(k));
+		//cout<<"Gluon From Singlet Jet found on event "<<ientry<<" jet number "<<k<<endl;
+			}
+	if(matchPID == 21){
+		neutralinoJetPt->Fill(CA8JetPt->at(k));  
+		neutralinoJetMass->Fill(CA8prunedJetMass->at(k));
+		
+		neutralinoJetMassvsTauRatio->Fill(tauRatio,CA8prunedJetMass->at(k));
+		//cout<<"Gluon Jet found on event "<<ientry<<" jet number "<<k<<endl;
+			}
+        	}      
+      
       
       
       //if (ientry > 100) break;
@@ -324,6 +448,8 @@ void EventTree::Loop()
 	   
    }  
    
+ 
+ 
    
  TFile* fOut = new TFile("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/ggNtupleTest.root","RECREATE");
  
@@ -373,6 +499,8 @@ void EventTree::Loop()
  JetPmass_NMid1o0->Write();
  JetPmassACut_NMid1o0->Write();
  
+ nJetEtTauRatioCut ->Write();
+ 
  histoGenPtPhoton_NMid0->Write(); 
  histoGenPtPhoton_NMid1->Write();
  histoGenPtPhoton_NMid1o0->Write();
@@ -403,9 +531,64 @@ void EventTree::Loop()
  
  
  jetEnergyvsPrunMass->Write();
+ 
+ jetEnergyvsTau3->Write();
+ jetEnergyvsTauRatio->Write();
+ 
+ jetMassvsTau3->Write();
+ jetMassvsTauRatio->Write();
+ 
+ quarkFromSquarkJetPt   		->Write();
+ quarkFromSquarkJetMass 		->Write();
 
+ singlinoFromNtrlioJetPt    	->Write();
+ singlinoFromNtrlioJetMass   	->Write();
+
+ quarkFromSquarkJetMassvsTauRatio 	->Write();
+ singlinoFromNtrlioJetMassvsTauRatio	->Write();
+
+ quarkJetPt  			->Write();
+ quarkJetMass			->Write();
+
+ neutralinoJetPt   		->Write();
+ neutralinoJetMass 		->Write();
+
+ quarkJetMassvsTauRatio 	->Write();
+ neutralinoJetMassvsTauRatio 	->Write();
+ 
+ quarkFromSquarkJetEta->Write();
+ quarkFromSquarkJetEt ->Write();
+ quarkFromSquarkJetTauRatio->Write();
+
+ singlinoFromNtrlioJetEta->Write();
+ singlinoFromNtrlioJetEt ->Write();
+ singlinoFromNtrlioJetTauRatio ->Write();
+  
+ quarkFromSquarkJetMassvsTauRatioEtCut->Write();
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->Write();
+ 
+ quarkFromSquarkJetMassvsEtTauRatioCut->Write();  
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->Write();
+ 
+ 
  fOut->Close();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

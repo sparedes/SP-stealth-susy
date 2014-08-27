@@ -229,55 +229,224 @@
  canvas18->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/photonPtCompared_NMid1o0.png"); */
  
  
- TCanvas *canvas1 = new TCanvas("canvas1","canvas1",100,100,700,500);
+//  TCanvas *canvas1 = new TCanvas("canvas1","canvas1",100,100,700,500);
+// 
+//  jetEtvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
+//  jetEtvsMass->GetYaxis()->SetTitle("Et (GeV)"); 
+//  jetEtvsMass->SetTitle("Et vs Jet Mass");
+//  jetEtvsMass->SetStats(kFALSE); 
+//  jetEtvsMass->Draw("colz");
+//  canvas1->SetLogz(kTRUE); 
+//  canvas1->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsMass.png"); 
+//  
+//  
+//   TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+// 
+//  jetEnergyvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
+//  jetEnergyvsPrunMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+//  jetEnergyvsPrunMass->SetTitle("Energy vs Jet PrunMass");
+//  jetEnergyvsPrunMass->SetStats(kFALSE); 
+//  jetEnergyvsPrunMass->Draw("colz");
+//  canvas2->SetLogz(kTRUE); 
+//  canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsPrunMass.png"); 
+// 
+//  TCanvas *canvas3 = new TCanvas("canvas3","canvas3",100,100,700,500);
+// 
+//  jetEnergyvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
+//  jetEnergyvsMass->GetYaxis()->SetTitle("Energy (GeV)"); 
+//  jetEnergyvsMass->SetTitle("Energy vs Jet Mass");
+//  jetEnergyvsMass->SetStats(kFALSE); 
+//  jetEnergyvsMass->Draw("colz");
+//  canvas3->SetLogz(kTRUE); 
+//  canvas3->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsMass.png"); 
+//  
+//  
+//  
+//  TCanvas *canvas4 = new TCanvas("canvas4","canvas4",100,100,700,500);
+// 
+//  jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
+//  jetEtvsPrunMass->GetYaxis()->SetTitle("Et (GeV)"); 
+//  jetEtvsPrunMass->SetTitle("Et vs et PrunMass ");
+//  jetEtvsPrunMass->SetStats(kFALSE); 
+//  jetEtvsPrunMass->Draw("colz");
+//  canvas4->SetLogz(kTRUE); 
+//  canvas4->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsPrunMass.png"); 
+//  
+//  
+ TCanvas *canvas5 = new TCanvas("canvas5","canvas5",100,100,700,500);
 
- jetEtvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
- jetEtvsMass->GetYaxis()->SetTitle("Et (GeV)"); 
- jetEtvsMass->SetTitle("Jet Mass vs Et");
- jetEtvsMass->SetStats(kFALSE); 
- jetEtvsMass->Draw("colz");
- canvas1->SetLogz(kTRUE); 
- canvas1->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsMass.png"); 
+ quarkFromSquarkJetMassvsTauRatio->GetXaxis()->SetTitle("Tau3 "); 
+ quarkFromSquarkJetMassvsTauRatio->GetYaxis()->SetTitle("Energy (GeV)"); 
+ quarkFromSquarkJetMassvsTauRatio->SetTitle("  quark-from-squark-Jet Mass vs TauRatio ");
+ quarkFromSquarkJetMassvsTauRatio->SetStats(kTRUE); 
+ quarkFromSquarkJetMassvsTauRatio->Draw("colz");
+ canvas5->SetLogz(kFALSE); 
+ gPad->Update();
+ TPaletteAxis *palette = (TPaletteAxis*)quarkFromSquarkJetMassvsTauRatio->GetListOfFunctions()->FindObject("palette");
+ palette->SetY2NDC(0.67);
+  
+ canvas5->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetMassvsTauRatio.png"); 
  
  
-  TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ TCanvas *canvas6 = new TCanvas("canvas6","canvas6",100,100,700,500);
 
- jetEnergyvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
- jetEnergyvsPrunMass->GetYaxis()->SetTitle("Energy (GeV)"); 
- jetEnergyvsPrunMass->SetTitle("Jet PrunMass vs Energy");
- jetEnergyvsPrunMass->SetStats(kFALSE); 
- jetEnergyvsPrunMass->Draw("colz");
- canvas2->SetLogz(kTRUE); 
- canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsPrunMass.png"); 
+ singlinoFromNtrlioJetMassvsTauRatio->GetXaxis()->SetTitle("TauRatio "); 
+ singlinoFromNtrlioJetMassvsTauRatio->GetYaxis()->SetTitle("Energy (GeV)"); 
+ singlinoFromNtrlioJetMassvsTauRatio->SetTitle("  singlino-from-neutralino-Jet Mass vs TauRatio ");
+ singlinoFromNtrlioJetMassvsTauRatio->SetStats(kTRUE); 
+ singlinoFromNtrlioJetMassvsTauRatio->Draw("colz");
+ canvas6->SetLogz(kFALSE); 
+ gPad->Update();
+ TPaletteAxis *palette2 = (TPaletteAxis*)singlinoFromNtrlioJetMassvsTauRatio->GetListOfFunctions()->FindObject("palette");
+ palette2->SetY2NDC(0.67);
+ canvas6->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetMassvsTauRatio.png"); 
 
- TCanvas *canvas3 = new TCanvas("canvas3","canvas3",100,100,700,500);
+ 
+ TCanvas *canvas7 = new TCanvas("canvas7","canvas7",100,100,700,500);
 
- jetEnergyvsMass->GetXaxis()->SetTitle("Mass (GeV)"); 
- jetEnergyvsMass->GetYaxis()->SetTitle("Energy (GeV)"); 
- jetEnergyvsMass->SetTitle("Jet Mass vs Energy");
- jetEnergyvsMass->SetStats(kFALSE); 
- jetEnergyvsMass->Draw("colz");
- canvas3->SetLogz(kTRUE); 
- canvas3->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEnergyvsMass.png"); 
+ quarkJetMassvsTauRatio->GetXaxis()->SetTitle("Tau3 "); 
+ quarkJetMassvsTauRatio->GetYaxis()->SetTitle("Mass (GeV)"); 
+ quarkJetMassvsTauRatio->SetTitle(" quark Jet Mass vs TauRatio  ");
+ quarkJetMassvsTauRatio->SetStats(kTRUE); 
+ quarkJetMassvsTauRatio->Draw("colz");
+ canvas7->SetLogz(kFALSE); 
+ gPad->Update();
+ TPaletteAxis *palette3 = (TPaletteAxis*)quarkJetMassvsTauRatio->GetListOfFunctions()->FindObject("palette");
+ palette3->SetY2NDC(0.67);
+  
+ canvas7->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkJetMassvsTauRatio.png"); 
  
  
- 
- TCanvas *canvas4 = new TCanvas("canvas4","canvas4",100,100,700,500);
+ TCanvas *canvas8 = new TCanvas("canvas8","canvas8",100,100,700,500);
 
- jetEtvsPrunMass->GetXaxis()->SetTitle("PrunMass (GeV)"); 
- jetEtvsPrunMass->GetYaxis()->SetTitle("Et (GeV)"); 
- jetEtvsPrunMass->SetTitle("Jet PrunMass vs Et");
- jetEtvsPrunMass->SetStats(kFALSE); 
- jetEtvsPrunMass->Draw("colz");
- canvas4->SetLogz(kTRUE); 
- canvas4->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/jetEtvsPrunMass.png"); 
+ neutralinoJetMassvsTauRatio->GetXaxis()->SetTitle("TauRatio "); 
+ neutralinoJetMassvsTauRatio->GetYaxis()->SetTitle("Mass (GeV)"); 
+ neutralinoJetMassvsTauRatio->SetTitle("neutralino Jet Mass vs TauRatio ");
+ neutralinoJetMassvsTauRatio->SetStats(kTRUE); 
+ neutralinoJetMassvsTauRatio->Draw("colz");
+ canvas8->SetLogz(kTRUE); 
+ gPad->Update();
+ TPaletteAxis *palette4 = (TPaletteAxis*)neutralinoJetMassvsTauRatio->GetListOfFunctions()->FindObject("palette");
+ palette4->SetY2NDC(0.67);
+  
+ canvas8->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/neutralinoJetMassvsTauRatio.png"); 
  
  
+ TCanvas *canvas10 = new TCanvas("canvas10","canvas10",100,100,700,500);
+
+ quarkFromSquarkJetMassvsTauRatioEtCut->GetXaxis()->SetTitle("TauRatio "); 
+ quarkFromSquarkJetMassvsTauRatioEtCut->GetYaxis()->SetTitle("Mass (GeV)"); 
+ quarkFromSquarkJetMassvsTauRatioEtCut->SetTitle("quark Jet Mass vs TauRatio, Et > 250 ");
+ quarkFromSquarkJetMassvsTauRatioEtCut->SetStats(kTRUE); 
+ quarkFromSquarkJetMassvsTauRatioEtCut->Draw("colz");
+ canvas10->SetLogz(kTRUE); 
+ gPad->Update();
+ TPaletteAxis *palette4 = (TPaletteAxis*)quarkFromSquarkJetMassvsTauRatioEtCut->GetListOfFunctions()->FindObject("palette");
+ palette4->SetY2NDC(0.67);
+  
+ canvas10->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetMassvsTauRatioEtCut.png");
+  
+ TCanvas *canvas10 = new TCanvas("canvas10","canvas10",100,100,700,500);
+
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->GetXaxis()->SetTitle("TauRatio "); 
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->GetYaxis()->SetTitle("Mass (GeV)"); 
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->SetTitle("neutralino Jet Mass vs TauRatio, Et > 250 ");
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->SetStats(kTRUE); 
+ singlinoFromNtrlioJetMassvsTauRatioEtCut->Draw("colz");
+ canvas10->SetLogz(kTRUE); 
+ gPad->Update();
+ TPaletteAxis *palette4 = (TPaletteAxis*)singlinoFromNtrlioJetMassvsTauRatioEtCut->GetListOfFunctions()->FindObject("palette");
+ palette4->SetY2NDC(0.67);
+  
+ canvas10->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetMassvsTauRatioEtCut.png"); 
  
+ TCanvas *canvas11 = new TCanvas("canvas11","canvas11",100,100,700,500);
+
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->GetXaxis()->SetTitle("TauRatio "); 
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->GetYaxis()->SetTitle("Mass (GeV)"); 
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->SetTitle("neutralino Jet Mass vs Et, TauRatio < 0.35 ");
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->SetStats(kTRUE); 
+ singlinoFromNtrlioJetMassvsEtTauRatioCut->Draw("colz");
+ canvas11->SetLogz(kFALSE); 
+ gPad->Update();
+ TPaletteAxis *palette4 = (TPaletteAxis*)singlinoFromNtrlioJetMassvsEtTauRatioCut->GetListOfFunctions()->FindObject("palette");
+ palette4->SetY2NDC(0.67);
+  
+ canvas11->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetMassvsEtTauRatioCut.png"); 
  
+ TCanvas *canvas12 = new TCanvas("canvas12","canvas12",100,100,700,500);
+
+ quarkFromSquarkJetMassvsEtTauRatioCut->GetXaxis()->SetTitle("TauRatio "); 
+ quarkFromSquarkJetMassvsEtTauRatioCut->GetYaxis()->SetTitle("Mass (GeV)"); 
+ quarkFromSquarkJetMassvsEtTauRatioCut->SetTitle("neutralino Jet Mass vs Et, TauRatio < 0.35 ");
+ quarkFromSquarkJetMassvsEtTauRatioCut->SetStats(kTRUE); 
+ quarkFromSquarkJetMassvsEtTauRatioCut->Draw("colz");
+ canvas12->SetLogz(kTRUE); 
+ gPad->Update();
+ TPaletteAxis *palette4 = (TPaletteAxis*)quarkFromSquarkJetMassvsEtTauRatioCut->GetListOfFunctions()->FindObject("palette");
+ palette4->SetY2NDC(0.67);
+  
+ canvas12->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetMassvsEtTauRatioCut.png"); 
+  
  
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ quarkFromSquarkJetPt->SetTitle("Quark Jet Pt");
+ quarkFromSquarkJetPt->GetXaxis()->SetTitle("GeV");
+ quarkFromSquarkJetPt->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetPt.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2");
+ quarkFromSquarkJetMass->SetTitle("Quark Jet Mass");
+ quarkFromSquarkJetMass->GetXaxis()->SetTitle("GeV");
+ quarkFromSquarkJetMass->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetMass.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ singlinoFromNtrlioJetPt->SetTitle("Neutralino Jet Pt");
+ singlinoFromNtrlioJetPt->GetXaxis()->SetTitle("GeV");
+ singlinoFromNtrlioJetPt->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetPt.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ singlinoFromNtrlioJetMass->SetTitle("Neutralino Jet Mass");
+ singlinoFromNtrlioJetMass->GetXaxis()->SetTitle("GeV");
+ singlinoFromNtrlioJetMass->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetMass.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ quarkFromSquarkJetEta->SetTitle("Quark Jet Eta");
+ quarkFromSquarkJetEta->GetXaxis()->SetTitle("GeV");
+ quarkFromSquarkJetEta->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetEta.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ quarkFromSquarkJetEt->SetTitle("Quark Jet Et");
+ quarkFromSquarkJetEt->GetXaxis()->SetTitle("GeV");
+ quarkFromSquarkJetEt->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetEt.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ quarkFromSquarkJetTauRatio->SetTitle("Quark Jet Tau3/Tau1");
+ quarkFromSquarkJetTauRatio->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/quarkFromSquarkJetTauRatio.png");
+
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ singlinoFromNtrlioJetEta->SetTitle("Neutralino Jet Eta");
+ singlinoFromNtrlioJetEta->GetXaxis()->SetTitle("GeV");
+ singlinoFromNtrlioJetEta->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetEta.png");
    
- 
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ singlinoFromNtrlioJetEt->SetTitle("Neutralino Jet Et");
+ singlinoFromNtrlioJetEt->GetXaxis()->SetTitle("GeV");
+ singlinoFromNtrlioJetEt->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetEt.png");
+   
+ TCanvas *canvas2 = new TCanvas("canvas2","canvas2",100,100,700,500);
+ singlinoFromNtrlioJetTauRatio->SetTitle("Neutralino Jet Tau3/Tau1");
+ singlinoFromNtrlioJetTauRatio->Draw();
+ canvas2->Print("/uscms_data/d3/sparedes/stealthSUSY/CMSSW_5_3_12/src/ggNtuple_test1/Plots/singlinoFromNtrlioJetTauRatio.png");
+
  
  
  	
